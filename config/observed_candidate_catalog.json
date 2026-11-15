@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "note": "Public TopCV listing pages observed by web lookup, NOT live Selenium calibrated. Never use as verified without normal in-browser calibration. Old district/city scope as existing crawler.",
+  "candidates": [
+    {
+      "position_id": "backend_developer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-backend-developer-tai-ha-noi-l1cr257cb258cl272",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "backend_developer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-backend-developer-tai-ho-chi-minh-l2cr257cb258cl272",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "frontend_developer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-frontend-developer-tai-ha-noi-l1cr257cb258cl273",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "frontend_developer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-frontend-developer-tai-ho-chi-minh-l2cr257cb258cl273",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "fullstack_developer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-fullstack-developer-tai-ha-noi-l1cr257cb258cl275",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "fullstack_developer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-fullstack-developer-tai-ho-chi-minh-l2cr257cb258cl275",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "ai_engineer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-ai-engineer-tai-ha-noi-l1cr257cb260cl283",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "ai_engineer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-ai-engineer-tai-ho-chi-minh-l2cr257cb260cl283",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "data_scientist",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-data-scientist-tai-ha-noi-l1cr257cb261cl286",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    },
+    {
+      "position_id": "data_scientist",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-data-scientist-tai-ho-chi-minh-l2cr257cb261cl286",
+      "evidence_type": "public_topcv_page_observed",
+      "status": "pending_live_calibration"
+    }
+  ]
+}

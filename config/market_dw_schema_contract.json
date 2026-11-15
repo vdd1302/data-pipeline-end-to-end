@@ -1,0 +1,127 @@
+{
+  "contract_version": "market_dw-v3",
+  "tables": {
+    "bridge_job_location": [
+      "allocation_weight",
+      "crawl_run_id",
+      "location_key",
+      "posting_natural_key"
+    ],
+    "bridge_job_skill": [
+      "crawl_run_id",
+      "posting_natural_key",
+      "skill_key"
+    ],
+    "dim_company": [
+      "company_key",
+      "company_name",
+      "company_natural_key",
+      "company_size",
+      "company_url",
+      "industry",
+      "observed_at"
+    ],
+    "dim_date": [
+      "date_key",
+      "day",
+      "full_date",
+      "month",
+      "quarter",
+      "week_of_year",
+      "year",
+      "year_month",
+      "year_week"
+    ],
+    "dim_experience": [
+      "experience_bucket",
+      "experience_key",
+      "max_years_boundary",
+      "min_years_boundary",
+      "sort_order"
+    ],
+    "dim_job_posting": [
+      "benefits",
+      "canonical_job_url",
+      "job_description",
+      "job_level",
+      "job_requirements",
+      "job_title",
+      "posting_key",
+      "posting_natural_key",
+      "source_job_id"
+    ],
+    "dim_location": [
+      "city",
+      "district",
+      "location_key",
+      "location_name"
+    ],
+    "dim_position": [
+      "classification_version",
+      "in_scope",
+      "position_id",
+      "position_name",
+      "role_family"
+    ],
+    "dim_skill": [
+      "is_known",
+      "normalization_version",
+      "skill_category",
+      "skill_key",
+      "skill_name"
+    ],
+    "fct_job_snapshot": [
+      "benefits",
+      "canonical_job_url",
+      "cleaning_status",
+      "cleaning_version",
+      "company_key",
+      "content_changed_flag",
+      "content_hash",
+      "crawl_run_id",
+      "deadline_date_key",
+      "deadline_date_label",
+      "experience_bucket",
+      "experience_key",
+      "experience_max_known",
+      "experience_max_years",
+      "experience_min_known",
+      "experience_min_years",
+      "is_continuing",
+      "is_new",
+      "is_reappeared",
+      "is_temporal_eligible",
+      "job_description",
+      "job_level",
+      "job_requirements",
+      "job_title",
+      "lifecycle_status",
+      "observation_method",
+      "position_id",
+      "position_status",
+      "posted_date_key",
+      "posted_date_label",
+      "posting_count",
+      "posting_key",
+      "posting_natural_key",
+      "quality_flags",
+      "raw_job_id",
+      "salary_currency",
+      "salary_disclosed_flag",
+      "salary_label",
+      "salary_max_known",
+      "salary_max_vnd",
+      "salary_midpoint_known",
+      "salary_midpoint_vnd",
+      "salary_min_known",
+      "salary_min_vnd",
+      "salary_negotiable_flag",
+      "salary_period",
+      "salary_status",
+      "scraped_at",
+      "snapshot_date",
+      "snapshot_date_key",
+      "source_job_id"
+    ]
+  }
+}

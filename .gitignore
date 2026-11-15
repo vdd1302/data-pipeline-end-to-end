@@ -1,0 +1,60 @@
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+.venv312/
+venv/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Credentials, browser sessions and local Airflow runtime
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*password*.txt
+/browser_profile/
+/airflow/runtime/
+/airflow/a72c_runtime/.env
+/airflow/a72c_runtime/secrets/
+/airflow/logs/
+/config/crawl.airflow.local.yaml
+
+# Binary drivers, executables and tools (reduces git push size)
+*.exe
+/tools/chromedriver/
+
+# Generated datasets, receipts, backups and database dumps
+/artifacts/
+/logs/
+/.backups/
+*.log
+*.sqlite
+*.db
+*.dump
+*.tar.gz
+*.zip
+/data/checkpoints/
+
+# Temporary operator and scratch scripts
+/scratch/
+
+# Tests (excluded to keep repository light)
+/tests/
+
+# Local manual crawl PowerShell scripts
+/crawl_all_scopes.ps1
+/crawl_uc.ps1
+*.ps1

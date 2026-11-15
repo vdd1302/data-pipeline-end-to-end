@@ -1,0 +1,215 @@
+# Cấu hình mục tiêu cho runner Selenium; đường dẫn tương đối tính từ project root.
+# Runtime dùng src/crawler/config.py. M4b cung cấp runner live một lệnh
+# cho NHỮNG URL scope đã xác minh riêng. Không tự suy đoán URL của 19 scope khác.
+# Một số policy bên dưới là mục tiêu cho Airflow/auto-resume trong tương lai;
+# M4b chưa hỗ trợ auto-resume sau crash/challenge và không auto-retry challenge.
+version: 1
+
+project:
+  name: it_job_market_pipeline
+  timezone: Asia/Ho_Chi_Minh
+
+source:
+  id: topcv
+  base_url: "https://www.topcv.vn"
+  entry_url: "https://www.topcv.vn/tim-viec-lam-cong-nghe-thong-tin-cr257"
+  method: selenium_ui
+  language: vi
+
+scope:
+  sector: IT
+  # Chọn nhóm NGHỀ, không dùng lĩnh vực công ty hoặc chỉ gắn metadata IT.
+  sector_filter_mode: ui_category
+  sector_search_label: "Công nghệ Thông tin"
+  require_sector_filter: true
+  on_missing_filter: stop_and_log
+
+  # Giữ địa giới cũ như URL Hà Nội l1 / Hồ Chí Minh l2 của dự án.
+  # TopCV còn có chế độ "Tỉnh, Phường/xã sau 1/7/2025 Mới";
+  # cần đổi chế độ và kiểm tra lại phạm vi nếu muốn địa giới sau sáp nhập.
+  location_ui_mode: "Tỉnh, Quận/huyện cũ"
+  require_location_filter: true
+  verify_filters_after_navigation: true
+  locations:
+    - id: ha_noi
+      search_label: "Hà Nội"
+    - id: ho_chi_minh
+      search_label: "Hồ Chí Minh"
+
+  # Giữ đúng 10 vị trí chuẩn, mỗi vị trí dùng một keyword.
+  # Keyword tìm kiếm là điều kiện khám phá, không phải nhãn nghề đã xác thực.
+  positions:
+    - id: software_engineer
+      keyword: "Software Engineer"
+    - id: backend_developer
+      keyword: "Back-End Developer"
+    - id: data_analyst
+      keyword: "Data Analyst"
+    - id: fullstack_developer
+      keyword: "Full-Stack Developer"
+    - id: ai_engineer
+      keyword: "AI Engineer"
+    - id: data_scientist
+      keyword: "Data Scientist"
+    - id: data_engineer
+      keyword: "Data Engineer"
+    - id: devops_engineer
+      keyword: "DevOps Engineer"
+    - id: cybersecurity_specialist
+      keyword: "Cybersecurity Specialist"
+    - id: business_analyst
+      keyword: "Business Analyst"
+
+crawl:
+  enabled: true
+  query_strategy: cross_product
+  # 10 vị trí x 2 thành phố = 20 truy vấn; đây là giới hạn crawl thử,
+  # không bảo đảm thu thập toàn bộ tin hoặc mọi biến thể tên vị trí.
+  collect:
+    - listing
+    - detail
+  max_pages_per_query: 5
+  max_jobs_per_query: null
+  max_details_per_batch: 20
+  scope_detail_quantum: 5
+  worker_time_budget_seconds: 1500
+  min_navigation_interval_seconds: 15
+  # Minimum gap between browser sessions, enforced across processes (see coordination.session_gap_remaining).
+  min_session_gap_seconds: 900
+  micro_batch_pause_seconds: 45
+  listing_pages_per_slice: 1
+  scope_retry_limit: 3
+  job_retry_limit: 2
+  lease_seconds: 180
+  scope_retry_delay_seconds: 300
+  rate_limit_backoff_seconds: 900
+  seed_batches_only_from_daily_dag: true
+  preserve_pending_across_midnight: true
+  allow_partial_detail: true
+  allow_verified_listing_only: true
+  hard_denial_requires_review: true
+  stop_when_no_next_page: true
+  stop_when_repeated_page: true
+  checkpoint_enabled: true
+  checkpoint_directory: data/checkpoints/topcv
+  resume_after_failure: true
+  # Không tự khởi động lại sau challenge/hard block.
+  auto_resume_after_access_block: false
+  deduplicate_within_run: true
+  deduplication_key:
+    - source_code
+    - source_job_id
+  # Fetch detail một lần/run nhưng giữ mọi cặp keyword/thành phố đã tìm thấy.
+  retain_search_matches: true
+  preserve_observations_across_runs: true
+
+selenium:
+  browser: chrome
+  headless: false
+  browser_instances: 1
+  # Profile riêng để giữ phiên; không dùng đồng thời với Chrome khác.
+  browser_profile_dir: browser_profile/topcv_airflow
+  page_load_timeout_seconds: 40
+  explicit_wait_seconds: 25
+  delay_between_pages_seconds: 15
+  delay_between_jobs_seconds: 15
+  # Chỉ retry lỗi tải trang tạm thời, không retry challenge/hard block.
+  max_retries: 2
+  retry_backoff_seconds:
+    - 30
+    - 60
+  retry_on:
+    - navigation_timeout
+    - transient_navigation_error
+  on_challenge: pause_for_manual_verification
+  manual_verification_timeout_seconds: 300
+  verification_poll_interval_seconds: 2
+  # Chỉ tiếp tục khi challenge biến mất VÀ trang listing/detail đã sẵn sàng.
+  require_target_page_after_verification: true
+  on_verification_timeout: checkpoint_and_stop
+  on_access_denied: checkpoint_and_stop
+  retry_on_challenge: false
+  on_unexpected_dialog: stop_and_log
+
+anti_bot:
+  # Phải kiểm tra cả trang listing và detail, trước khi parse/lưu dữ liệu.
+  # Không có cam kết vượt Cloudflare tự động bằng Selenium.
+  detection_enabled: true
+  challenge_title_markers:
+    - "just a moment"
+    - "checking your browser"
+    - "attention required"
+  challenge_body_markers:
+    - "verify you are human"
+    - "verifying you are human"
+    - "checking your browser"
+    - "xác minh bạn là con người"
+  access_denied_markers:
+    - "sorry, you have been blocked"
+    - "you are unable to access topcv.vn"
+    - "access denied"
+    - "error 1020"
+  # Không coi riêng chữ 'Cloudflare' trong HTML là bằng chứng bị chặn.
+  # WebDriver không luôn có HTTP status; chỉ xử lý status nếu quan sát được.
+  on_http_403: checkpoint_and_stop
+  on_http_429: checkpoint_and_stop
+  # Lưu hạn Retry-After vào checkpoint; chỉ cho phép resume thủ công sau hạn này.
+  honor_retry_after: true
+
+extraction:
+  # Identity lưu ngoài raw_payload, khớp RawRepository.insert_discovery().
+  identity_fields:
+    - source_job_id
+    - job_url
+  # Khớp RawJobPayload và kiểm tra hiện tại trong parse_job_detail().
+  required_fields:
+    - job_title_raw
+    - company_name_raw
+    - location_raw
+    - job_description_raw
+    - job_requirements_raw
+  optional_fields:
+    - salary_raw
+    - experience_raw
+    - posted_date_raw
+    - deadline_raw
+    - company_url_raw
+    - company_size_raw
+    - company_industry_raw
+    - skill_tags_raw
+    - benefits_raw
+    - job_level_raw
+  # Metadata lưu ngoài business payload, không đưa vào content_hash.
+  generated_fields:
+    - source_code
+    - crawl_run_id
+    - snapshot_date
+    - scraped_at
+    - content_hash
+    - fetch_status
+    - parser_version
+  allow_null_optional_fields: true
+
+raw_storage:
+  engine: postgresql
+  # src/raw_storage/db.py đọc URL Raw riêng, tách khỏi kết nối Data Warehouse.
+  connection_url_env: TOPCV_RAW_DATABASE_URL
+  schema: raw
+  tables:
+    runs: crawl_runs
+    discoveries: job_discoveries
+    observations: job_observations
+    errors: crawl_errors
+  # Context truy vấn nằm trong job_discoveries, không có bảng job_search_matches.
+  search_match_fields:
+    - query_city_raw
+    - query_category_raw
+    - search_page_no
+    - result_position
+  payload_column: raw_payload
+  payload_type: jsonb
+  history_mode: append_observations
+
+logging:
+  level: INFO
+  directory: logs

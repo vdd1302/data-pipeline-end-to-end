@@ -1,0 +1,4 @@
+# Local secrets for isolated M8.7C acceptance; NEVER commit
+.env
+test_runner.runtime.env
+test_runner.compose.env

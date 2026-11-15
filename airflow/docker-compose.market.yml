@@ -1,0 +1,122 @@
+name: topcv-market
+x-common: &common
+  build:
+    context: ..
+    dockerfile: airflow/Dockerfile.market
+  image: topcv-market-airflow:local
+  environment: &environment
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg://market_owner:${MARKET_DB_PASSWORD:?required}@market-db:5432/market
+    AIRFLOW__CORE__AUTH_MANAGER: airflow.api_fastapi.auth.managers.simple.simple_auth_manager.SimpleAuthManager
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: 'admin:admin'
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/config/market_auth.json
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://market-api:8080/execution/
+    AIRFLOW__API_AUTH__JWT_SECRET: ${MARKET_JWT_SECRET:?required}
+    AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: '20'
+    PYTHONPATH: /opt/airflow/project
+    TOPCV_RAW_DATABASE_URL: ${TOPCV_RAW_CONTAINER_URL:?required}
+    TOPCV_DW_DATABASE_URL: ${MARKET_CONTAINER_DW_URL:?required}
+    TOPCV_CONTAINER_BROWSER: '1'
+    TOPCV_CONTAINER_XVFB: '1'
+    DISPLAY: ':99'
+    # Crawling is an operator-run step; Airflow only runs the data stages. YES re-enables
+    # the crawl tasks (they then follow the same source gate and host holds).
+    TOPCV_AIRFLOW_CRAWL_ENABLED: ${TOPCV_AIRFLOW_CRAWL_ENABLED:-NO}
+    # Browser transport of crawl runs: selenium (default) or undetected (docs/08_Undetected_Chrome_VI.md).
+    TOPCV_BROWSER_DRIVER: ${TOPCV_BROWSER_DRIVER:-selenium}
+    TOPCV_UC_SETTLE_SECONDS: ${TOPCV_UC_SETTLE_SECONDS:-}
+    TOPCV_UC_CHALLENGE_GRACE_SECONDS: ${TOPCV_UC_CHALLENGE_GRACE_SECONDS:-}
+    # Extra CLI options for the DAG crawl tasks, e.g. "--detail-first" to collect job details.
+    TOPCV_AIRFLOW_CRAWL_ARGS: ${TOPCV_AIRFLOW_CRAWL_ARGS:-}
+    TOPCV_LIVE_COLLECTION_APPROVED: ${TOPCV_LIVE_COLLECTION_APPROVED:-NO}
+    TOPCV_SOURCE_AUTHORIZATION_REFERENCE: ${TOPCV_SOURCE_AUTHORIZATION_REFERENCE:-}
+    CHROME_BINARY: /usr/bin/chromium
+    CHROMEDRIVER_PATH: /usr/bin/chromedriver
+    MARKET_READER_PASSWORD: ${MARKET_READER_PASSWORD:?required}
+  volumes:
+    - ../:/opt/airflow/project:ro
+    - ./market_dags:/opt/airflow/dags:ro
+    - market_logs:/opt/airflow/logs
+    - market_config:/opt/airflow/config
+    - market_browser:/opt/airflow/browser-profile
+  extra_hosts:
+    - host.docker.internal:host-gateway
+  depends_on:
+    market-init:
+      condition: service_completed_successfully
+  restart: unless-stopped
+services:
+  market-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: market_owner
+      POSTGRES_PASSWORD: ${MARKET_DB_PASSWORD:?required}
+      POSTGRES_DB: market
+    ports:
+      - 127.0.0.1:55440:5432
+    volumes:
+      - market_db:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U market_owner -d market']
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+  market-permissions:
+    image: apache/airflow:3.1.8
+    user: '0:0'
+    entrypoint: [bash, -ec]
+    command: ['chown -R 50000:0 /opt/airflow/config /opt/airflow/logs /opt/airflow/browser-profile']
+    volumes:
+      - market_logs:/opt/airflow/logs
+      - market_config:/opt/airflow/config
+      - market_browser:/opt/airflow/browser-profile
+    restart: 'no'
+  market-init:
+    <<: *common
+    command: [bash, -ec, 'airflow db migrate']
+    depends_on:
+      market-db:
+        condition: service_healthy
+      market-permissions:
+        condition: service_completed_successfully
+    restart: 'no'
+  market-api:
+    <<: *common
+    command: api-server
+    ports:
+      - 127.0.0.1:8096:8080
+    healthcheck:
+      test: [CMD, curl, --fail, 'http://localhost:8080/api/v2/monitor/health']
+      interval: 15s
+      timeout: 8s
+      retries: 25
+  market-scheduler:
+    <<: *common
+    entrypoint: ['/usr/bin/dumb-init', '--', 'bash', '-ec']
+    command:
+      - 'rm -f /tmp/.X99-lock && Xvfb :99 -screen 0 1440x900x24 -nolisten tcp >/tmp/xvfb.log 2>&1 & exec /entrypoint scheduler'
+    hostname: "${COMPOSE_PROJECT_NAME:-topcv-market}-scheduler"
+    # Playwright v1.64.1 profile enables Chromium's user-namespace sandbox.
+    security_opt:
+      - seccomp=./chromium-seccomp.json
+    depends_on:
+      market-init:
+        condition: service_completed_successfully
+      market-api:
+        condition: service_healthy
+  market-dag-processor:
+    <<: *common
+    command: dag-processor
+    depends_on:
+      market-init:
+        condition: service_completed_successfully
+      market-api:
+        condition: service_healthy
+volumes:
+  market_db:
+  market_logs:
+  market_config:
+  market_browser:

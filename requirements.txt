@@ -1,0 +1,10 @@
+psycopg[binary]==3.3.8
+python-dotenv
+selenium
+beautifulsoup4
+PyYAML>=6.0
+requests>=2.32,<3
+# Opt-in browser transport (--browser-driver undetected). It still imports distutils,
+# which Python 3.12+ only has through setuptools.
+undetected-chromedriver>=3.5.5
+setuptools

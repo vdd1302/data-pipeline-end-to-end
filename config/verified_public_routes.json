@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "position_id": "software_engineer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-software-engineer-tai-ha-noi-l1cr257cb258cl271",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 50,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "5d970f9017ba3edc9fd38533ee11a64427b3db9942df7d5c98b9bb30e908929d"
+      }
+    },
+    {
+      "position_id": "software_engineer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-software-engineer-tai-ho-chi-minh-l2cr257cb258cl271",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 50,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "66a7bec2412fb8ca0759fc221c0796603bb1e5b786a2999da962182a8b713308"
+      }
+    },
+    {
+      "position_id": "backend_developer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-backend-developer-tai-ha-noi-l1cr257cb258cl272",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 50,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "957a79af2f3d7c9be6a08fc5b447e3d3c285243339135855be40df4b6cc30e9c"
+      }
+    },
+    {
+      "position_id": "backend_developer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-backend-developer-tai-ho-chi-minh-l2cr257cb258cl272",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 39,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "513ca72673cb8771070ec59d044fb18a444055401d8f2cd4f2105e9b319b4b53"
+      }
+    },
+    {
+      "position_id": "data_analyst",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-data-analyst-tai-ha-noi-l1cr257cb261cl145",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 42,
+        "audited_at_utc": "2026-11-14T06:23:00.000000+00:00",
+        "job_id_sample_sha256": "5b127ee64d0716e6131f67b40c0d7f73d76fafe285a060310401906f64e5991b"
+      }
+    },
+    {
+      "position_id": "data_analyst",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-data-analyst-tai-ho-chi-minh-l2cr257cb261cl145",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 16,
+        "audited_at_utc": "2026-11-14T06:23:00.000000+00:00",
+        "job_id_sample_sha256": "32281f5348965a38b65e892d72d19b7e186c03e4da0c6bc29e7f276d0372cd53"
+      }
+    },
+    {
+      "position_id": "fullstack_developer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-fullstack-developer-tai-ha-noi-l1cr257cb258cl275",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 25,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "685ee2bb0a6ec06c27bcc78e3e94a9a7d5804c6ce15d847b8911cf7bd4e2f374"
+      }
+    },
+    {
+      "position_id": "fullstack_developer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-fullstack-developer-tai-ho-chi-minh-l2cr257cb258cl275",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 25,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "fe8e19c57575e04ed965432805c3d89a636ac9fe25ce9575d7bbcc44b48ace08"
+      }
+    },
+    {
+      "position_id": "ai_engineer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-ai-engineer-tai-ha-noi-l1cr257cb260cl283",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 15,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "e77a31bb9c7c420bec58e1b80715a54fbc5c03c5944fcbb49316c2261fa4adbd"
+      }
+    },
+    {
+      "position_id": "ai_engineer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-ai-engineer-tai-ho-chi-minh-l2cr257cb260cl283",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 15,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "c54f5bcf86488e5791de0696b402ca4d68fee3659aef01e1e8a3c7e4f47c0026"
+      }
+    },
+    {
+      "position_id": "data_scientist",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-data-scientist-tai-ha-noi-l1cr257cb261cl286",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 15,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "57cbf6f7c5566ea809db9469e23ce675b9ea74313f96e054cb88d81be5670d31"
+      }
+    },
+    {
+      "position_id": "data_scientist",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-data-scientist-tai-ho-chi-minh-l2cr257cb261cl286",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 15,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "89578886d0e5c4b73126bbcccc07ecb811fdeb455919df8b66d6b37399d828e8"
+      }
+    },
+    {
+      "position_id": "data_engineer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-data-engineer-tai-ha-noi-l1cr257cb261cl285",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 20,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "1dce3a25b5dbe7fde3d4d88d9f5c88ff2538bdec2994a4ebc9f6d9209787729e"
+      }
+    },
+    {
+      "position_id": "data_engineer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-data-engineer-tai-ho-chi-minh-l2cr257cb261cl285",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 11,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "96ec83f0db5ff2deece8f1e3c83d0b7f3bfd29f6ab3c350d3cd1f515a64846e9"
+      }
+    },
+    {
+      "position_id": "devops_engineer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-devops-engineer-tai-ha-noi-l1cr257cb262cl288",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 20,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "08b58e08369ad18bd6374064b397a39096c07267123405046773fac7de82f97d"
+      }
+    },
+    {
+      "position_id": "devops_engineer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-devops-engineer-tai-ho-chi-minh-l2cr257cb262cl288",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 20,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "5c88c429079b6d8dc09ef7aa3562e265fecc15d0a4e6ca28836a0bb063b6e883"
+      }
+    },
+    {
+      "position_id": "cybersecurity_specialist",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-information-security-tai-ha-noi-l1cr257cb263",
+      "status": "superseded_by_keyword_route",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 15,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "5aa21d7e3981e917e21efa961c4759a8f656792e5a93ca7928e1aae8ee00c495"
+      }
+    },
+    {
+      "position_id": "cybersecurity_specialist",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-information-security-tai-ho-chi-minh-l2cr257cb263",
+      "status": "superseded_by_keyword_route",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 15,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "ed91272c6365f219f38d57dd71977af847bcbece86a947d06e635d8081a1e6b9"
+      }
+    },
+    {
+      "position_id": "business_analyst",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-business-analyst-phan-tich-nghiep-vu-tai-ha-noi-l1cr257cb268cl322",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 20,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "b09f23c707af64fff0e61ad8b65e4115c025e53be769fc1527232fac631fadd7"
+      }
+    },
+    {
+      "position_id": "business_analyst",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-business-analyst-phan-tich-nghiep-vu-tai-ho-chi-minh-l2cr257cb268cl322",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 20,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "316bc026b3a834595c740e238745eac2f731b4b5a06b11257cf5aa30afc3d555"
+      }
+    },
+    {
+      "position_id": "frontend_developer",
+      "location_id": "ha_noi",
+      "route": "https://www.topcv.vn/tim-viec-lam-frontend-developer-tai-ha-noi-l1cr257cb258cl273",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 25,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "1a09ab00cdae00d381d822d7d69209757f4afbbc319141a5be38fdf3a39a0cf0"
+      }
+    },
+    {
+      "position_id": "frontend_developer",
+      "location_id": "ho_chi_minh",
+      "route": "https://www.topcv.vn/tim-viec-lam-frontend-developer-tai-ho-chi-minh-l2cr257cb258cl273",
+      "status": "live_verified",
+      "evidence": {
+        "scope_verified": true,
+        "all_cards_city_verified": true,
+        "parsed_cards": 8,
+        "audited_at_utc": "2026-11-08T17:25:00.000000+00:00",
+        "job_id_sample_sha256": "2fd43aa345a8803c8020a5700db11318cffef3555ea24fa77de7b01c97639bb7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "discovered_on": "2026-10-30",
+  "note": "16 catalog scopes not verified in baseline 4/20 registry; 14 public role/city candidate URLs and 2 broad category proxy references. Membership reconciled dynamically against on-disk registry; live status is NOT inferred.",
+  "scopes": [
+    {
+      "position_id": "backend_developer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-backend-developer-tai-ho-chi-minh-l2cr257cb258cl272",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "data_engineer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-data-engineer-tai-ha-noi-l1cr257cb261cl285",
+      "evidence": "Public TopCV city+Data Engineer filtered result observed 2026-10-30 (web index); Selenium live calibration PENDING",
+      "status": "public_url_observed_not_selenium_verified",
+      "public_keyword_reference_url": "https://www.topcv.vn/tim-viec-lam-data-engineer-tai-ha-noi-kl1"
+    },
+    {
+      "position_id": "frontend_developer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-frontend-developer-tai-ha-noi-l1cr257cb258cl273",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "frontend_developer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-frontend-developer-tai-ho-chi-minh-l2cr257cb258cl273",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "fullstack_developer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-fullstack-developer-tai-ha-noi-l1cr257cb258cl275",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "fullstack_developer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-fullstack-developer-tai-ho-chi-minh-l2cr257cb258cl275",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "ai_engineer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-ai-engineer-tai-ha-noi-l1cr257cb260cl283",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "ai_engineer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-ai-engineer-tai-ho-chi-minh-l2cr257cb260cl283",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "data_scientist",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-data-scientist-tai-ha-noi-l1cr257cb261cl286",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "data_scientist",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-data-scientist-tai-ho-chi-minh-l2cr257cb261cl286",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "devops_engineer",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-devops-engineer-tai-ha-noi-l1cr257cb262cl288",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "devops_engineer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-devops-engineer-tai-ho-chi-minh-l2cr257cb262cl288",
+      "evidence": "Exact public TopCV result page inspected 2026-10-30, scope browser check PENDING",
+      "status": "public_url_observed_not_selenium_verified"
+    },
+    {
+      "position_id": "cybersecurity_specialist",
+      "location_id": "ha_noi",
+      "url": null,
+      "public_keyword_reference_url": "https://www.topcv.vn/tim-viec-lam-cybersecurity-specialist-tai-ha-noi-kl1",
+      "evidence": "Public TopCV Information Security category + city observed; BROADER than cybersecurity_specialist. Not eligible for auto-promotion.",
+      "status": "category_proxy_reference_only_not_position_verified",
+      "category_proxy_reference_url": "https://www.topcv.vn/tim-viec-lam-information-security-tai-ha-noi-l1cr257cb263"
+    },
+    {
+      "position_id": "cybersecurity_specialist",
+      "location_id": "ho_chi_minh",
+      "url": null,
+      "public_keyword_reference_url": "https://www.topcv.vn/tim-viec-lam-cybersecurity-specialist-tai-ho-chi-minh-kl2",
+      "evidence": "Public TopCV Information Security category + city observed; BROADER than cybersecurity_specialist. Not eligible for auto-promotion.",
+      "status": "category_proxy_reference_only_not_position_verified",
+      "category_proxy_reference_url": "https://www.topcv.vn/tim-viec-lam-information-security-tai-ho-chi-minh-l2cr257cb263"
+    },
+    {
+      "position_id": "business_analyst",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-business-analyst-phan-tich-nghiep-vu-tai-ha-noi-l1cr257cb268cl322",
+      "public_keyword_reference_url": "https://www.topcv.vn/tim-viec-lam-business-analyst-tai-ha-noi-kl1",
+      "evidence": "TopCV search result publicly returned 2026-10-30; Product Management/BA category, role & city browser calibration PENDING",
+      "status": "public_url_observed_not_selenium_verified",
+      "position_taxonomy": "Product Management / Business Analyst (Phân tích nghiệp vụ); requires downstream IT relevance check"
+    },
+    {
+      "position_id": "business_analyst",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-business-analyst-phan-tich-nghiep-vu-tai-ho-chi-minh-l2cr257cb268cl322",
+      "public_keyword_reference_url": "https://www.topcv.vn/tim-viec-lam-business-analyst-tai-ho-chi-minh-kl2",
+      "evidence": "TopCV search result publicly returned 2026-10-30; Product Management/BA category, role & city browser calibration PENDING",
+      "status": "public_url_observed_not_selenium_verified",
+      "position_taxonomy": "Product Management / Business Analyst (Phân tích nghiệp vụ); requires downstream IT relevance check"
+    }
+  ],
+  "updated_at": "2026-10-30",
+  "catalog_note": "Replaced already registered backend_developer/ha_noi with missing data_engineer/ha_noi candidate; only public evidence, no new live verification. Registry is authoritative at runtime."
+}

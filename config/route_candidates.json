@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "note": "Observed public TopCV page URLs; NOT live Selenium verified, not automatically eligible for discovery.",
+  "candidates": [
+    {
+      "position_id": "data_engineer",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-data-engineer-tai-ho-chi-minh-l2cr257cb261cl285",
+      "evidence_type": "independently_observed_public_search_result",
+      "status": "pending_local_browser_calibration"
+    },
+    {
+      "position_id": "cybersecurity_specialist",
+      "location_id": "ha_noi",
+      "url": "https://www.topcv.vn/tim-viec-lam-cyber-security-specialist-tai-ha-noi-kl1?type_keyword=1&sba=1&locations=l1&saturday_status=0",
+      "evidence_type": "operator_observed_ui_search_result_2026-11-13",
+      "status": "pending_local_browser_calibration",
+      "note": "URL TopCV itself produces for the keyword 'cyber security specialist' + Ha Noi; page title/heading name the keyword. Every crawl re-checks URL, title, city and each card."
+    },
+    {
+      "position_id": "cybersecurity_specialist",
+      "location_id": "ho_chi_minh",
+      "url": "https://www.topcv.vn/tim-viec-lam-cyber-security-specialist-tai-ho-chi-minh-kl2?type_keyword=1&disable_auto_detect_type_keyword=1&sba=1&locations=l2&saturday_status=0",
+      "evidence_type": "operator_observed_ui_search_result_2026-11-13",
+      "status": "pending_local_browser_calibration",
+      "note": "URL TopCV itself produces for the keyword 'cyber security specialist' + Ho Chi Minh; heading 'Tuyen dung 15 viec lam Cyber Security Specialist tai Ho Chi Minh'."
+    }
+  ]
+}
